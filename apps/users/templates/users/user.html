@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class='row'>
+            <div class='col-md-12'>
+                <h2>Posts by {{user.name}}!!</h2>
+                <h2>Count: {{quotes.count}}</h2>
+
+                <h3>Quotes:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-md-8'>
+                    {% for quote in quotes %}
+                        <h3 class='red'>{{quote.author}}:</h3>
+                        <h4><i>{{ quote.message }}</i></h4>
+                    {% endfor %}
+            </div>
+        </div>
+        <br>
+        <p><a href="/logout/">Logout</a> | <a href="/quotes/">Dashboard</a></p>
+    </div>
+</body>
+</html>
